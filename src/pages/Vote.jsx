@@ -42,3 +42,21 @@ class Vote extends React.Component {
 }
 
 export default Vote;
+
+/*
+基于extends实现继承
+1.call继承
+2.基于原型继承 Parent.prototype.__proto__===React.Compoent.prototype--》实例--》Parent.prototype--》React.Compoent.prototype--》Object.prototype
+3.只要自己设置了constructor,则内部的第一句一定要执行 super（）
+ */
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  x = 100;
+  getR() {}
+}
+
+let p = new parent(10, 20);
+console.log(p);

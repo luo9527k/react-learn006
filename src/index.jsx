@@ -8,6 +8,13 @@ import Vote from './pages/Vote';
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+/*
+  render函数在渲染的时候，如果type是：
+    - 字符串：创建一个标签
+    - 普通函数：把函数执行，并且把props传递给函数
+    - 构造函数：把构造函数基于new执行[也就是创建类的一个实例]
+*/
+
 root.render(
   <>
     {/* <Dialog title="提示" content="我TM来了" />
