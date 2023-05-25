@@ -13,10 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
     - 字符串：创建一个标签
     - 普通函数：把函数执行，并且把props传递给函数
     - 构造函数：把构造函数基于new执行[也就是创建类的一个实例]
+    React.StrictMode:React的严格模式，可以检测一些不规范的
 */
 
 root.render(
-  <>
+  <React.StrictMode>
     {/* <Dialog title="提示" content="我TM来了" />
     <Dialog content="dialog组件弹窗">
       <button>确定</button>
@@ -24,5 +25,5 @@ root.render(
     </Dialog>
     <Tast title="dom" content="root" /> */}
     <Vote title="vote投票" />
-  </>
+  </React.StrictMode>
 );
