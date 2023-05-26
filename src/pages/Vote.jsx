@@ -53,7 +53,9 @@
 
     组件更新逻辑：
          一：子组件更新，导致父组件更新
-         二：父组件更新，触发的子组件更新
+         二：父组件更新，触发的子组件更新[触发componentWillReceiveProps]
+         this.props:存储之前的属性，
+         nextProps：传递进来的最新的属性值
  */
 
 import React from 'react';
@@ -138,8 +140,11 @@ class Vote extends React.Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     console.log('componentWillReceiveProps', this.props, nextProps);
   }
-}
 
+  UNSAFE_componentWillMount() {
+    console.log('组件销毁之前');
+  }
+}
 export default Vote;
 
 /*
