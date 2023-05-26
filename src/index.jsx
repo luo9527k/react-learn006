@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 //导入组件
 // import Dialog from './components/Dialog';
 // import Tast from './pages/Tast';
-import Vote from './pages/Vote';
+// import Vote from './pages/Vote';
+import Demo from './pages/Demo';
 
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +25,9 @@ root.render(
       <button>取消</button>
     </Dialog>
     <Tast title="dom" content="root" /> */}
-    <Vote title="vote投票" />
+
+    {/* <Vote title="vote投票" /> */}
+
+    <Demo />
   </>
 );
