@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 */
 
 root.render(
-  <React.StrictMode>
+  <>
     {/* <Dialog title="提示" content="我TM来了" />
     <Dialog content="dialog组件弹窗">
       <button>确定</button>
@@ -25,5 +25,5 @@ root.render(
     </Dialog>
     <Tast title="dom" content="root" /> */}
     <Vote title="vote投票" />
-  </React.StrictMode>
+  </>
 );

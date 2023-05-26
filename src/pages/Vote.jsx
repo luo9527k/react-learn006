@@ -31,7 +31,29 @@
     钩子函数：在程序运行到某个阶段，我们可以基于提供一个处理函数，让开发者在这个阶段做一些自定义的事情
 
     4.触发render函数：渲染
-    5.
+    5.将虚拟DOM转变为真实DOM
+    【REACT-hook生命周期】
+   1. shouldComponentUpdate此周期需要返回true/false
+    返回true：允许更新，会继续执行下一个操作
+    返回false：不允许更新，接下来不会进行任何处理
+
+   2.触发componentWillUpdate 周期函数：更新之前
+   - 此周期函数也是不安全的
+   - 在这个阶段，状态还没有被修改
+
+   3.修改状态/属性值 [让this.state.xxx改为最新的值]
+
+   4.触发 render 周期函数：组件更新
+    - 按照最新的状态属性，把返回的JSX编译为VirtualDOM
+    - 和上次渲染出来的虚拟DOM进行对比【DOM-DIFF】
+    把差异部分进行渲染【渲染为真实DOM】
+
+    5.触发 compoentDidUpdate 周期函数：组件更新完毕
+    特殊说明：如果我们是基于this.forceUpdate()，这回强制更新视图，会跳过 shouldComponentUpdate进行更新
+
+    组件更新逻辑：
+         一：子组件更新，导致父组件更新
+         二：父组件更新，触发的子组件更新
  */
 
 import React from 'react';
@@ -98,6 +120,23 @@ class Vote extends React.Component {
 
   componentDidMount() {
     console.log('第一次渲染完毕');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate', this.state, nextProps);
+    return true;
+  }
+
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
+    console.log('componentWillUpdate', this.state, nextProps);
+  }
+
+  componentDidUpdate() {
+    console.log('组件更新完毕');
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log('componentWillReceiveProps', this.props, nextProps);
   }
 }
 
