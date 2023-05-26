@@ -6,6 +6,4 @@
 
 ### 第二章节：REACT 的渲染原理
 
-### 第三章节：REACT-HOOK 函数的执行
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-bepkrb)
+### 第三章节：REACT 周期函数的执行
