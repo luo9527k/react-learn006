@@ -1,5 +1,7 @@
 import React from 'react';
 import '../style/Demo.css';
+// import Ref from './Ref';
+import RefDom from './Ref-dom';
 
 /*
   PureComponent 与 Component 的区别：
@@ -36,6 +38,8 @@ class Demo extends React.PureComponent {
         >
           添加一个span
         </button>
+        {/* <Ref /> */}
+        <RefDom />
       </>
     );
   }

@@ -1,24 +1,21 @@
 import React from 'react';
 
-//编写一个函数
-const tast = (props) => {
-  //获取传递的数值
-  let { children, title, content } = props;
+class Tast extends React.Component {
+  span = React.createRef();
+  render() {
+    return (
+      <>
+        <div ref="Dom">类组件</div>
+        <div ref={T=>this.div=T}>函数创建的类组件</div>
+        <div ref={this.span}>类组件特殊写法</div>
+      </>
+    );
+  }
+  componentDidMount() {
+    console.log(this.refs.Dom);
+    console.log(this.div);
+    console.log(this.span.current);
+  }
+}
 
-  // 将children转变为数组
-  children = React.Children.toArray(children);
-  return (
-    <div className="main">
-      <div className="header">
-        <h2>{title}</h2>
-      </div>
-      <div className="footer">
-        <p>{content}</p>
-        <button>next</button>
-      </div>
-    </div>
-  );
-};
-
-//导出组件
-export default tast;
+export default Tast;

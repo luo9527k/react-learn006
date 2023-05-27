@@ -29,5 +29,6 @@ root.render(
     {/* <Vote title="vote投票" /> */}
 
     <Demo />
+    {/* <Tast /> */}
   </>
 );
