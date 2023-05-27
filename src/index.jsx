@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 // import Dialog from './components/Dialog';
 // import Tast from './pages/Tast';
 // import Vote from './pages/Vote';
-import Demo from './pages/Demo';
+// import Demo from './pages/Demo';
+import State from './view/SetState';
 
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,7 +29,9 @@ root.render(
 
     {/* <Vote title="vote投票" /> */}
 
-    <Demo />
+    {/* <Demo /> */}
+
     {/* <Tast /> */}
+    <State />
   </>
 );
