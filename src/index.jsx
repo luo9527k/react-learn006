@@ -2,7 +2,7 @@ import React from 'react'; //语法核心
 import ReactDOM from 'react-dom/client'; //渲染核心
 //导入组件
 // import Dialog from './components/Dialog';
-// import Tast from './pages/Tast';
+import Tast from './pages/Tast';
 // import Vote from './pages/Vote';
 // import Demo from './pages/Demo';
 import State from './view/SetState';
@@ -31,7 +31,7 @@ root.render(
 
     {/* <Demo /> */}
 
-    {/* <Tast /> */}
+    <Tast id="1" title="第一个" />
     <State />
   </>
 );

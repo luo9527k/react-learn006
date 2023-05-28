@@ -1,14 +1,38 @@
 import React from 'react';
+import { flushSync } from 'react-dom';
+// flushSync可以刷新“update”更新队列，让修改状态的任务队列立即处理一次！
 
 class State extends React.Component {
   state = {
     xa: 10,
     xb: 20,
     xc: 30,
+    R: 0,
   };
 
   handle = () => {
-    let { xa, xb, xc } = this.state;
+    // let { xa, xb, xc } = this.state;
+    // this.setState({ xa: xa + 1 });
+    // this.setState({ xb: xb + 1 });
+    // this.setState({ xc: xc + 1 });
+
+    // for (let i = 0; i < 20; i++) {
+    //   flushSync(() => {
+    //     this.setState({
+    //       R: this.state.R + 1,
+    //     });
+    //   });
+    // }
+
+    for (let i = 0; i < 20; i++) {
+      // prevState存储的是之前的状态值
+      // return的对象就是我们需要修改的新状态值
+      this.setState((prevState) => {
+        return {
+          R: prevState.R + 1,
+        };
+      });
+    }
 
     //同时渲染三个状态：只会触发一次视图更新
     // this.setState({
@@ -35,12 +59,13 @@ class State extends React.Component {
   render() {
     console.log('视图渲染'); //第一执行
     //解构实例中的属性
-    const { xa, xb, xc } = this.state;
+    const { xa, xb, xc, R } = this.state;
     return (
       <>
         <div>
-          {xa}-{xb}-{xc}
+          add:{xa}-{xb}-{xc}
         </div>
+        <span>{R}</span>
         <br />
         <button onClick={this.handle}>按钮</button>
       </>

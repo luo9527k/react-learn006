@@ -6,7 +6,7 @@ class Tast extends React.Component {
     return (
       <>
         <div ref="Dom">类组件</div>
-        <div ref={T=>this.div=T}>函数创建的类组件</div>
+        <div ref={T => this.div = T}>函数创建的类组件</div>
         <div ref={this.span}>类组件特殊写法</div>
       </>
     );
@@ -18,4 +18,14 @@ class Tast extends React.Component {
   }
 }
 
-export default Tast;
+const Type = (props) => {
+  const { id, title } = props;
+  return (
+    <>
+      <div>{id}</div>
+      <h2>{title}</h2>
+    </>
+  );
+};
+
+export default (Tast, Type);
