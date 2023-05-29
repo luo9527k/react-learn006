@@ -1,5 +1,5 @@
 import React from 'react';
-import Test from '../test/Test';
+
 class Demo extends React.Component {
   /*
     基于函数的内部处理，如果我们给合成事件绑定一个“普通函数”，单事件触发，绑定的函数执行，方法中的this会是undefind，解决方案：this-》实例
@@ -27,7 +27,6 @@ class Demo extends React.Component {
           <button onClick={this.handle.bind(this, 10, 20)}>按钮</button>
           <button onClick={this.btn}>BTN</button>
         </div>
-        <Test />
       </>
     );
   }

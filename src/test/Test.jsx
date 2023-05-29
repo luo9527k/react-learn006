@@ -1,19 +1,39 @@
 import React from 'react';
+import '../test/Test.less';
 
 class Test extends React.Component {
-  btn = (x, y, ev) => {
-    console.log(this, x, y, ev);
-  };
-  bun = (ev) => {
+  pop(x, y, ev) {
+    console.log(x, y, ev);
+  }
+
+  text = (ev) => {
     console.log(ev);
   };
-
   render() {
     return (
       <>
-        <div>test组件</div>
-        <button onClick={this.btn.bind(11, 22)}>Test按钮</button>
-        <button onClick={this.bun}>bun按钮</button>
+        <div
+          className="top"
+          onClick={() => {
+            console.log('冒泡top');
+          }}
+        >
+          <div
+            className="content"
+            onClick={() => {
+              console.log('冒泡content');
+            }}
+          >
+            <div
+              className="footer"
+              onClick={() => {
+                console.log('冒泡 fotter');
+              }}
+            ></div>
+          </div>
+        </div>
+        <button onClick={this.pop.bind(0, 'string')}>Pop</button>
+        <button onClick={this.text}>Coc</button>
       </>
     );
   }
