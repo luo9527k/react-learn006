@@ -1,6 +1,7 @@
 import React from 'react';
 
 class Tast extends React.Component {
+ 
   proson = {
     data: [
       {
@@ -19,9 +20,11 @@ class Tast extends React.Component {
   };
 
   current = () => {
-    this.proson.push`<div>添加</div>`;
+    this.proson.data.push = `<div></div>`;
   };
+
   render() {
+    const { data } = this.proson;
     return (
       <>
         <div>
