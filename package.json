@@ -11,7 +11,9 @@
     "eject": "vite eject"
   },
   "dependencies": {
+    "antd": "^5.5.2",
     "fastclick": "^1.0.6",
+    "http-proxy-middleware": "^2.0.6",
     "less": "^4.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
