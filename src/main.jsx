@@ -4,6 +4,7 @@ import Test from './test/Test';
 // import Demo from './views/Demo';
 // import Index from './views/Index';
 // import './views/Index.less';
+import Demo1 from './views/Demo1';
 
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,5 +15,6 @@ root.render(
     {/* <Demo /> */}
     <Test />
     {/* <Index /> */}
+    <Demo1 />
   </>
 );

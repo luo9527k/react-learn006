@@ -1,41 +1,50 @@
 import React from 'react';
-import '../test/Test.less';
 
-class Test extends React.Component {
-  pop(x, y, ev) {
-    console.log(x, y, ev);
-  }
+class Tast extends React.Component {
+  
+  proson = {
+    data: [
+      {
+        id: 1,
+        name: '张三',
+      },
+      {
+        id: 2,
+        name: '李四',
+      },
+      {
+        id: 3,
+        name: '王五',
+      },
+    ],
+  };
 
-  text = (ev) => {
-    console.log(ev);
+  current = () => {
+    this.proson.push`<div>添加</div>`;
   };
   render() {
+    const { data } = this.proson;
     return (
       <>
-        <div
-          className="top"
-          onClick={() => {
-            console.log('冒泡top');
-          }}
-        >
-          <div
-            className="content"
-            onClick={() => {
-              console.log('冒泡content');
-            }}
-          >
-            <div
-              className="footer"
-              onClick={() => {
-                console.log('冒泡 fotter');
-              }}
-            ></div>
-          </div>
+        <div>
+          <span>
+            {data.map((item) => {
+              const { id, name } = item;
+              return (
+                <div
+                  key={id}
+                  onClick={this.current.bind(this, name)}
+                  style={{ marginTop: 30 }}
+                >
+                  {item.id}--{item.name}
+                </div>
+              );
+            })}
+          </span>
         </div>
-        <button onClick={this.pop.bind(0, 'string')}>Pop</button>
-        <button onClick={this.text}>Coc</button>
       </>
     );
   }
 }
-export default Test;
+
+export default Tast;
