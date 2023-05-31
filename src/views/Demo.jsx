@@ -8,6 +8,7 @@ class Demo extends React.Component {
 
   */
   handle(x, y, ev) {
+    console.log(root);
     //只要经过bind处理，那么最后一个实参，就是传递的合成事件对象
     console.log(this, ev, x, y);
   }
