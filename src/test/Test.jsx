@@ -1,7 +1,6 @@
 import React from 'react';
 
 class Tast extends React.Component {
- 
   proson = {
     data: [
       {
@@ -19,8 +18,8 @@ class Tast extends React.Component {
     ],
   };
 
-  current = () => {
-    this.proson.data.push = `<div></div>`;
+  current = (name) => {
+    console.log('这是:' + name);
   };
 
   render() {
