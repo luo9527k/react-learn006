@@ -1,7 +1,7 @@
 import React from 'react';
 import './Task.less';
 //解构ANTD的组件
-import { DatePicker, Button, Tag, Table, Popconfirm } from 'antd';
+import { DatePicker, Button, Tag, Table, Popconfirm, Modal } from 'antd';
 
 class Task extends React.Component {
   // 表格数据
@@ -72,7 +72,7 @@ class Task extends React.Component {
     },
   ];
   //编写一些数据
-  data = {
+  state = {
     tableData: [
       {
         id: 1,
@@ -96,18 +96,30 @@ class Task extends React.Component {
         time: '2023-5-28',
       },
     ],
-    tableLoading: false,
+    tableLoding: false,
+    moduleVisible: false,
   };
+
+  closeModal = () => {};
   render() {
     //解构值
-    const { tableData, tableLoading } = this.data;
+    const { tableData, tableLoading, moduleVisible } = this.state;
     return (
       <>
         <div className="task-box">
           {/* 头部 */}
           <div className="header">
             <div className="title">TASK管理系统</div>
-            <Button type="primary">新增任务</Button>
+            <Button
+              type="primary"
+              onClick={() => {
+                this.setState({
+                  moduleVisible: true,
+                });
+              }}
+            >
+              新增任务
+            </Button>
           </div>
           <div className="tag-box">
             <div className="tag">
@@ -127,6 +139,14 @@ class Task extends React.Component {
             rowKey="id"
           />
           {/* 对话框&表单 */}
+          <Modal
+            title="新增任务"
+            open={moduleVisible}
+            keyboard={true}
+            okText="确认提交"
+            onCancel={this.closeModal}
+            onOk={this.submit}
+          />
         </div>
       </>
     );
