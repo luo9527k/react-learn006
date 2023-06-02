@@ -1,7 +1,18 @@
 import React from 'react';
 import './Task.less';
 //解构ANTD的组件
-import { DatePicker, Button, Tag, Table, Popconfirm, Modal } from 'antd';
+import {
+  DatePicker,
+  Button,
+  Tag,
+  Table,
+  Popconfirm,
+  Modal,
+  Form,
+  Input,
+  Calendar,
+  theme,
+} from 'antd';
 
 class Task extends React.Component {
   // 表格数据
@@ -100,7 +111,14 @@ class Task extends React.Component {
     moduleVisible: false,
   };
 
-  closeModal = () => {};
+  closeModal = () => {
+    this.setState({
+      moduleVisible: false,
+    });
+  };
+
+  //添加任务
+  submit = () => {};
   render() {
     //解构值
     const { tableData, tableLoading, moduleVisible } = this.state;
@@ -146,7 +164,16 @@ class Task extends React.Component {
             okText="确认提交"
             onCancel={this.closeModal}
             onOk={this.submit}
-          />
+          >
+            <Form>
+              <Form.Item>
+                <Input.TextArea
+                  rows={5}
+                  style={{ resize: 'none' }}
+                ></Input.TextArea>
+              </Form.Item>
+            </Form>
+          </Modal>
         </div>
       </>
     );
