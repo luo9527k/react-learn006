@@ -11,7 +11,7 @@ import {
   Form,
   Input,
   Calendar,
-  theme,
+  message,
 } from 'antd';
 
 class Task extends React.Component {
@@ -109,16 +109,24 @@ class Task extends React.Component {
     ],
     tableLoding: false,
     moduleVisible: false,
+    confirmLoding: false,
   };
 
   closeModal = () => {
     this.setState({
       moduleVisible: false,
+      confirmLoding: false,
     });
+    this.formIns.resetFields();
   };
 
   //添加任务
-  submit = () => {};
+  submit = async () => {
+    try {
+      await this.formIns.validateFields();
+      message.success('表单校验成功');
+    } catch (_) {}
+  };
   render() {
     //解构值
     const { tableData, tableLoading, moduleVisible } = this.state;
@@ -165,18 +173,52 @@ class Task extends React.Component {
             onCancel={this.closeModal}
             onOk={this.submit}
           >
-            <Form>
-              <Form.Item>
+            <Form
+              layout="vertical"
+              size="small"
+              ref={(x) => (this.formIns = x)}
+              initialValues={{
+                task: '',
+                time: '',
+              }}
+            >
+              <Form.Item
+                label="任务描述"
+                name="task"
+                validateTrigger="onBlur"
+                rules={[
+                  {
+                    required: true,
+                    message: '任务描述为必填',
+                  },
+                  {
+                    min: 6,
+                    message: '最小长度最少为六位及以上',
+                  },
+                ]}
+              >
                 <Input.TextArea
                   rows={5}
                   style={{ resize: 'none' }}
                 ></Input.TextArea>
+              </Form.Item>
+
+              <Form.Item
+                label="预计完成时间"
+                name="time"
+                validateTrigger="onBlur"
+                rules={[{ required: true, message: '预计完成时间是必填的' }]}
+              >
+                <Calendar />
               </Form.Item>
             </Form>
           </Modal>
         </div>
       </>
     );
+  }
+  componentDidMount() {
+    console.log(this.formIns);
   }
 }
 export default Task;
