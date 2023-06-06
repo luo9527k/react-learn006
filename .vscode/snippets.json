@@ -1,6 +1,6 @@
 {
   "react": {
-    "prefix": "jt-react",
+    "prefix": "fa-react",
     "body": [
       "import React from 'react';",
       "",
