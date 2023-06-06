@@ -1,16 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
 
-const Vote = () => {
-  const tack = 5;
-  const oppose = 10;
+const Vote = (props) => {
+  const [tack, setTack] = useState(5);
+  const [oppose, setOppose] = useState(10);
+
+  const Add = () => {
+    setTack(tack + 1);
+  };
+  const Count = () => {
+    setTack(oppose + 1);
+  };
   return (
     <>
-      <h2>标题</h2>
+      <h2>{props.title}</h2>
       <span>{tack + oppose}</span>
       <p>支持人数：{tack}人</p>
       <p>反对人数：{oppose}人</p>
-      <button>支持</button>
-      <button>反对</button>
+      <button onClick={Add}>支持</button>
+      <button onClick={Count}>反对</button>
     </>
   );
 };
