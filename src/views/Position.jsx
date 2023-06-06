@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Button } from 'antd';
 
-const Demo = (props) => {
+const Position = () => {
   console.log('render渲染');
   const [x, setX] = useState(10),
     [y, setY] = useState(20),
@@ -34,4 +34,4 @@ const Demo = (props) => {
   );
 };
 
-export default Demo;
+export default Position;
