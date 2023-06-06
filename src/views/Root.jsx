@@ -1,5 +1,3 @@
-import Reat, { useState } from 'react';
-
 /*
 函数组件的每一次渲染(或者是更新)，都是把函数(重新)执行，产生一个全新的 "私有上下文"
   - 内部的代码也需要重新执行
@@ -8,15 +6,18 @@ import Reat, { useState } from 'react';
     - 执行useState，只有第一次，设置的初始值会生效，其余以后再执行，获取的状态都是最新的状态值[而不是初始值]
   - 返回的修改状态的方法，每一次都是返回一个新的
 */
+import Reat, { useState } from 'react';
 const Root = () => {
   const [count, setCount] = useState(0);
-  const sum = () => {
+
+
+  const Btn = () => {
     setCount(count + 10);
   };
   return (
     <>
       <div>{count}</div>
-      <button onClick={sum}>打印</button>
+      <button onClick={Btn}>点击</button>
     </>
   );
 };
