@@ -17,8 +17,14 @@ const Demo = () => {
     for (let i = 0; i < 10; i++) {
       flushSync(() => {
         // setX(x + 1);
-        setX(10);
+        //使用Object.is比较算法，来比较新老state
+        setX(10); //与原始值相同不会进行更新
       });
+
+      // setX((prev) => {
+      //   //存储上次的值
+      //   return prev + 1;
+      // });
     }
   };
   return (
