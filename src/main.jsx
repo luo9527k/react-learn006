@@ -7,10 +7,11 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 // import Position from '../src/views/Position';
 // import Demo from '../src/views/Demo';
 // import Demo2 from '../src/views/Demo2';
-import Index from '../src/Test/Index';
+// import Index from '../src/Test/Index';
 // import Page from '../src/pages/Page';
 // import Page2 from '../src/pages/Page2';
-import Page3 from '../src/pages/Page3';
+// import Page3 from '../src/pages/Page3';
+import Page4 from '../src/pages/Page4';
 import { ConfigProvider } from 'antd';
 
 //获取id为root的容器，作为我们的根容器
@@ -27,9 +28,10 @@ root.render(
     {/* <Demo /> */}
     {/* 将参数传递给组件 */}
     {/* <Demo2 x="10" y="20" /> */}
-    <Index title="Index组件" />
+    {/* <Index title="Index组件" /> */}
     {/* <Page /> */}
     {/* <Page2 /> */}
-    <Page3 />
+    {/* <Page3 /> */}
+    <Page4 />
   </ConfigProvider>
 );
