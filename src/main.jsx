@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 // import Position from '../src/views/Position';
 // import Demo from '../src/views/Demo';
 // import Demo2 from '../src/views/Demo2';
-// import Index from '../src/Test/Index';
+import Index from '../src/Test/Index';
 // import Page from '../src/pages/Page';
 // import Page2 from '../src/pages/Page2';
 import Page3 from '../src/pages/Page3';
@@ -27,7 +27,7 @@ root.render(
     {/* <Demo /> */}
     {/* 将参数传递给组件 */}
     {/* <Demo2 x="10" y="20" /> */}
-    {/* <Index title="Index组件" /> */}
+    <Index title="Index组件" />
     {/* <Page /> */}
     {/* <Page2 /> */}
     <Page3 />

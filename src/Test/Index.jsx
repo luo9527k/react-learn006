@@ -1,39 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
 import { Button } from 'antd';
 
+const Demo = React.forwardRef((props, ref) => {
+  const Add = () => {};
+  useImperativeHandle(() => {
+    return (
+      <>
+        <div>{props.title}</div>
+      </>
+    );
+  });
+});
+
 const Index = (props) => {
-  const { title } = props;
-
-  const [a1, a2] = useState('六');
-  const Add = () => {
-    a2(a1 + '哈哈哈');
-  };
+  const xa = useRef(null);
 
   useEffect(() => {
-    console.log('on1', a1);
+    console.log(xa.current);
   });
-
-  useEffect(() => {
-    console.log('on2', a1);
-  }, []);
-
-  useEffect(() => {
-    console.log('on3', a1);
-  }, [a1]);
-
-  useEffect(() => {
-    return () => {
-      console.log('one4', a1);
-    };
-  });
-
   return (
     <>
-      <div>{title}</div>
-      <div>
-        <span>{a1}</span>
-      </div>
-      <Button onClick={Add}>添加</Button>
+      <Button />
+      <Demo ref={xa} />
     </>
   );
 };

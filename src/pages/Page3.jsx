@@ -1,9 +1,18 @@
-import React, { useState, useEffect, useRef, } from 'react';
+import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
 
 /*
   基于forwardRef实现ref转发
+  useImperativeHandle
  */
 const Demo = React.forwardRef((props, ref) => {
+  let [text, setText] = useState('hello');
+  let Btn = () => {};
+  useImperativeHandle(ref, () => {
+    return {
+      text,
+      Btn,
+    };
+  });
   return (
     <div className="child">
       <span ref={ref}>嗡嗡嗡</span>
