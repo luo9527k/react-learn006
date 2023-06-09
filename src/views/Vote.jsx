@@ -1,23 +1,22 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Button } from 'antd';
 
-const Vote = (props) => {
-  const [tack, setTack] = useState(5);
-  const [oppose, setOppose] = useState(10);
+const Vote = () => {
+  const [supNum, setSupNum] = useState(0),
+    [oppNum, setOppNum] = useState(0);
 
-  const Add = () => {
-    setTack(tack + 1);
-  };
-  const Count = () => {
-    setTack(oppose + 1);
-  };
+  const total = supNum + oppNum;
+  if(!total==0){supNum/oppNum*100.toFiex(2)}
   return (
     <>
-      <h2>{props.title}</h2>
-      <span>{tack + oppose}</span>
-      <p>支持人数：{tack}人</p>
-      <p>反对人数：{oppose}人</p>
-      <button onClick={Add}>支持</button>
-      <button onClick={Count}>反对</button>
+      <p>支持人数：{supNum}</p>
+      <p>反对人数：{oppNum}</p>
+      <Button onClick={() => setSupNum(supNum + 1)} type="primary">
+        支持
+      </Button>
+      <Button onClick={() => setOppNum(oppNum + 1)} type="default">
+        反对
+      </Button>
     </>
   );
 };
