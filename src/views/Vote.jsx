@@ -5,14 +5,12 @@ const Vote = () => {
   const [supNum, setSupNum] = useState(0),
     [oppNum, setOppNum] = useState(0);
 
-  let total = supNum + oppNum,
-    min = '%';
-
-  if (total > 0)
-    min = useMemo(() => {
-      ((total / supNum) * 100).toFixed(2) + '%';
-      return min;
-    });
+  let min = useMemo(() => {
+    let total = supNum + oppNum,
+      min = '%';
+    if (total > 0) min = ((supNum / total) * 100).toFixed(2) + '%';
+    return min;
+  }, [supNum, oppNum]);
 
   // if (total > 0) ={
   //   ((total / supNum) * 100).toFixed(2) + '%';
