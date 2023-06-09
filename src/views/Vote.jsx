@@ -5,12 +5,17 @@ const Vote = () => {
   const [supNum, setSupNum] = useState(0),
     [oppNum, setOppNum] = useState(0);
 
-  const total = supNum + oppNum;
-  if(!total==0){supNum/oppNum*100.toFiex(2)}
+  let total = supNum + oppNum;
+  let min = '0';
+  if (!min == 0) {
+    ((total / supNum) * 100).toFixed(2) + '%';
+    return total;
+  }
   return (
     <>
       <p>支持人数：{supNum}</p>
       <p>反对人数：{oppNum}</p>
+      <div>比率：{min}</div>
       <Button onClick={() => setSupNum(supNum + 1)} type="primary">
         支持
       </Button>
