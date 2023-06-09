@@ -7,7 +7,7 @@ const Vote = () => {
 
   let total = supNum + oppNum;
   let min = '0';
-  if (!min == 0) {
+  if (total > 0) {
     ((total / supNum) * 100).toFixed(2) + '%';
     return total;
   }
