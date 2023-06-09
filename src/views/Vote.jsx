@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Button } from 'antd';
 
 const Vote = () => {
@@ -7,10 +7,17 @@ const Vote = () => {
 
   let total = supNum + oppNum,
     min = '%';
-  if (total > 0) {
-    ((total / supNum) * 100).toFixed(2) + '%';
-    return min;
-  }
+
+  if (total > 0)
+    min = useMemo(() => {
+      ((total / supNum) * 100).toFixed(2) + '%';
+      return min;
+    });
+
+  // if (total > 0) ={
+  //   ((total / supNum) * 100).toFixed(2) + '%';
+  //   return min;
+  // }
   return (
     <>
       <p>支持人数：{supNum}</p>
