@@ -5,11 +5,11 @@ const Vote = () => {
   const [supNum, setSupNum] = useState(0),
     [oppNum, setOppNum] = useState(0);
 
-  let total = supNum + oppNum;
-  let min = '0';
+  let total = supNum + oppNum,
+    min = '%';
   if (total > 0) {
     ((total / supNum) * 100).toFixed(2) + '%';
-    return total;
+    return min;
   }
   return (
     <>
