@@ -11,7 +11,9 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 // import Page from '../src/pages/Page';
 // import Page2 from '../src/pages/Page2';
 // import Page3 from '../src/pages/Page3';
-import Page4 from '../src/pages/Page4';
+// import Page4 from '../src/pages/Page4';
+import Page5 from '../src/pages/Page5';
+import Page6 from '../src/pages/Page6';
 import { ConfigProvider } from 'antd';
 
 //获取id为root的容器，作为我们的根容器
@@ -32,6 +34,8 @@ root.render(
     {/* <Page /> */}
     {/* <Page2 /> */}
     {/* <Page3 /> */}
-    <Page4 />
+    {/* <Page4 /> */}
+    <Page5 />
+    <Page6 />
   </ConfigProvider>
 );
