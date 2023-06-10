@@ -1,32 +1,22 @@
-import React, { useMemo, useState } from 'react';
-import { Button } from 'antd';
+import React, { useState, useCallback } from 'react';
+import VoteFooter from './VoteFooter';
+import VoteMain from './VoteMain';
 
 const Vote = () => {
   const [supNum, setSupNum] = useState(0),
     [oppNum, setOppNum] = useState(0);
 
-  let min = useMemo(() => {
-    let total = supNum + oppNum,
-      min = '%';
-    if (total > 0) min = ((supNum / total) * 100).toFixed(2) + '%';
-    return min;
-  }, [supNum, oppNum]);
-
-  // if (total > 0) ={
-  //   ((total / supNum) * 100).toFixed(2) + '%';
-  //   return min;
-  // }
+  const handle = useCallback((type) => {
+    if (type === 'sup') {
+      setSupNum(supNum + 1);
+      return;
+    }
+    setOppNum(oppNum + 1);
+  });
   return (
     <>
-      <p>支持人数：{supNum}</p>
-      <p>反对人数：{oppNum}</p>
-      <div>比率：{min}</div>
-      <Button onClick={() => setSupNum(supNum + 1)} type="primary">
-        支持
-      </Button>
-      <Button onClick={() => setOppNum(oppNum + 1)} type="default">
-        反对
-      </Button>
+      <VoteMain supNum={supNum} oppNum={oppNum} title="函数组件" />
+      <VoteFooter handle={handle} />
     </>
   );
 };
