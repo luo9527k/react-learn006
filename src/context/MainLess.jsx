@@ -1,12 +1,14 @@
 import React from 'react';
-import ThemeContext
+import ThemeContext from '../ThemeContext';
 
 class MainLess extends React.Component {
   render() {
     return (
-      <>
-        <div></div>
-      </>
+      <ThemeContext.Provider value={{ bba, bbc }}>
+        <div>
+          {bba}-{bbc}
+        </div>
+      </ThemeContext.Provider>
     );
   }
 }
