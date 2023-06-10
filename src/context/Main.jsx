@@ -2,6 +2,7 @@ import React from 'react';
 //导入上下文对象
 import ThemeContext from '../ThemeContext';
 import MainLess from './MainLess';
+import MainFooter from './MainFooter';
 
 class Main extends React.Component {
   state = {
@@ -20,8 +21,8 @@ class Main extends React.Component {
           这是：
           {bba}--{bbc}
         </div>
-        <button onClick={Btn}>按钮</button>
         <MainLess />
+        <MainFooter />
       </ThemeContext.Provider>
     );
   }
