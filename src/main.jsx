@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'; //渲染核心
 // import Vote from './views/Vote';
 // import Vote from './pages/Vote';
 // import Index from './context/Index';
-import Main from './context/Main';
+// import Main from './context/Main';
+import Main from './shop/Main';
 import { ConfigProvider } from 'antd';
 
 //获取id为root的容器，作为我们的根容器
