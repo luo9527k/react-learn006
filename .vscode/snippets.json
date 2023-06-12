@@ -1,18 +1,30 @@
 {
   "react": {
-    "prefix": "react",
+    "prefix": "fa-react",
     "body": [
       "import React from 'react';",
-      " import ReactDOM from 'react-dom/client';",
       "",
-      "const root = ReactDOM.createRoot(document.getElementById('root')",
-      
-      "const ${1} = () => {",
-      "return  <><div></div></>",
-      "};",
+      "const ${1} = (props) => {",
+      "const {} = props;",
+      "return (<><div></div></>)}",
       "",
-      "${1}.propTypes = {};",
       "",
+      "export default ${1};",
+      ""
+    ],
+    "description": "react funcitional component"
+  },
+  "class-react": {
+    "prefix": "class-react",
+    "body": [
+      "import React from 'react';",
+      "",
+      "class ${1} extends React.Component{",
+      "render() {",
+      "return (<><div></div></>)",
+      "",
+      "}",
+      "}",
       "export default ${1};",
       ""
     ],
