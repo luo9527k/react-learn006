@@ -1,36 +1,30 @@
-import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
-import { Button } from 'antd';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { flushSync } from 'react-dom';
 
-const Demo = React.forwardRef((props, ref) => {
-  const [num, nextNum] = useState('哈哈哈');
-  const Add = () => {
-    nextNum('呃呃呃');
-  };
-  useImperativeHandle(ref, () => {
-    return {
-      Add,
-      num,
-    };
-  });
-
-  return (
-    <>
-      <div>{num}</div>
-      <div>{props.title}</div>
-    </>
-  );
-});
-
-const Index = (props) => {
-  const xa = useRef(null);
-
+const Index = () => {
+  const [x, setX] = useState(10);
   useEffect(() => {
-    console.log(xa.current);
+    console.log(`this${x}`);
   });
+  useEffect(() => {
+    console.log(`this${x}`); //只执行一次
+  }, []);
+  useEffect(() => {
+    console.log(`this${x}`); //立即执行
+  }, [x]);
+
+  useLayoutEffect(() => {
+    console.log(`useLayoutEffect${x}`); //最先执行
+  });
+  useLayoutEffect(() => {
+    console.log(`useLayoutEffect${x}`); //只渲染一次，之后的操作不执行
+  }, []);
+  const Add = () => {
+    setX(x + 1);
+  };
   return (
     <>
-      <Button>点击</Button>
-      <Demo ref={xa} />
+      <button onClick={Add}>点击</button>
     </>
   );
 };

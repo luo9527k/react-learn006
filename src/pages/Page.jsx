@@ -25,7 +25,7 @@ const Page = () => {
 
   //callback 无依赖
   useEffect(() => {
-    console.log('ok2', num);
+    console.log('ok2', num); ////只渲染一次，之后的操作不执行
   }, []);
 
   //callback 依赖num
@@ -43,12 +43,12 @@ const Page = () => {
   }, [num]);
 
   useLayoutEffect(() => {
-    console.log('useLayoutEffect');
+    console.log('useLayoutEffect'); //最先执行，每次渲染都会被渲染
   }, [num]);
 
-  useEffect(() => {
-    console.log('useEffect');
-  });
+  useLayoutEffect(() => {
+    console.log('useLayoutEffect'); //只渲染一次，之后的操作不执行
+  }, []);
 
   const handle = () => {
     setNum(num + 1);
