@@ -16,7 +16,8 @@ const Index = (props) => {
     //unsubscribe 执行可以把刚放入事件中的方法移除
     //把组件更新的方法放入到index容器中
     const unsubscribe = index.subscribe(Btn);
-  }, []);
+    return unsubscribe;
+  }, [one]);
   return (
     <>
       <h2>{title}</h2>
