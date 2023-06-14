@@ -13,8 +13,8 @@ class Main extends React.Component {
     );
   }
   componentDidMount() {
-    const { index } = this.context;
-    index.subscribe = () => {
+    const { test } = this.context;
+    test.subscribe = () => {
       this.forceUpdate(); //强制组件更新
     };
   }
