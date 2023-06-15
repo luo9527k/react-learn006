@@ -6,6 +6,7 @@ import test from './store/test.js';
 import ThemeContext from './ThemeContext';
 import Index from './views/Index';
 import Main from './views/Main';
+import Vote from './views/Vote';
 
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
     <ThemeContext.Provider value={{ index, test }}>
       <Index title="这是一条信息" handle="app" top={'frist'} />
       <Main />
+      <Vote />
     </ThemeContext.Provider>
   </ConfigProvider>
 );
