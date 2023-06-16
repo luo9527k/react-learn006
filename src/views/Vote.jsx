@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Button } from 'antd';
 import ThemeContext from '../ThemeContext';
+import action from '../store/actions/index.js';
 
 class Vote extends React.Component {
   static contextType = ThemeContext;
@@ -10,18 +11,23 @@ class Vote extends React.Component {
       <>
         <Button
           onClick={() => {
-            index.dispatch({
-              type: 'vote_sup',
-            });
+            // index.dispatch({
+            //   type: 'vote_sup',
+            // });
+
+            //从管理模块拉取信息
+            store.dispatch(action.vote.support());
           }}
         >
           +1
         </Button>
         <Button
           onClick={() => {
-            index.dispatch({
-              type: 'vote_opp',
-            });
+            // index.dispatch({
+            //   type: 'vote_opp',
+            // });
+
+            store.dispatch(action.personal.oppose());
           }}
         >
           +1
