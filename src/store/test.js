@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import * as Types from '../js/action-type';
 
 const init = {
   one: 10,
@@ -7,9 +8,9 @@ const init = {
 
 const Test = (state = init, action) => {
   state = { ...state };
-  if (action.type === 'vote_one') {
+  if (action.types === Types.vote_sup) {
     state.one++;
-  } else if (action.type === 'vote_two') {
+  } else if (action.type === Types.vote_opp) {
     state.two++;
   }
   return state;

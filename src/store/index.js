@@ -1,5 +1,6 @@
 import { createStore } from 'redux';
 
+
 // 管理员：修改STORE容器中的公共状态
 const initial = {
   //第一次派发，会见该值传递给reducer
