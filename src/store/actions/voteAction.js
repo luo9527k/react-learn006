@@ -1,4 +1,4 @@
-import * as Types from '../js/action-type';
+import * as Types from '../js/action-type.js';
 
 const voteAction = {
   support() {

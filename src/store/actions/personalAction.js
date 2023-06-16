@@ -1,4 +1,4 @@
-import * as Types from '../js/action-types';
+import * as Types from '../js/action-type.js';
 
 const personalAction = {
   support() {

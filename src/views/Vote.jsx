@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { Button } from 'antd';
 import ThemeContext from '../ThemeContext';
-import action from '../store/actions/index.js';
+// import action from '../store/actions/index.js';
 
 class Vote extends React.Component {
-  static contextType = ThemeContext;
+  static contextType = useContext(ThemeContext);
   render() {
     const { index } = this.context;
+    console.log(index.getState());
     return (
       <>
         <Button
