@@ -2,10 +2,12 @@ import React from 'react';
 import { Button } from 'antd';
 import ThemeContext from '../ThemeContext';
 import action from '../store/actions/index.js';
+//1. import {connect} from 'react-redux'
 
 class Vote extends React.Component {
   static contextType = ThemeContext;
   render() {
+    //2. const {supNum,oppNum}=this.props
     const { index } = this.context;
     console.log(index.getState());
     return (
@@ -38,3 +40,33 @@ class Vote extends React.Component {
   }
 }
 export default Vote;
+/*
+3.
+export default connect(null,dispatch=>{
+      null,
+      dispatch=>{
+        return{
+          support(){
+            dispatch(action.vote.support())
+          },
+          oppose(){
+            dispatch(action.vote.oppose())
+          }
+        }
+      }
+})(Vote);
+ */
+
+/**
+  connect(mapstateToProps,mapDispatchToProps)(我们需要渲染的组件)
+  mapDispatchToProps：把需要派发的任务，当作属性传递给组件
+  connect(null,dispatch=>{
+    dispatch:store.dispatch
+  
+    //返回对象中的信息，会作为属性传递给组件
+    return{
+      ...
+    }
+  }
+  )(vote)
+ */

@@ -1,9 +1,11 @@
 import React from 'react';
 import ThemeContext from '../ThemeContext';
+// import { connect } from 'react-redux';
 
 class Main extends React.Component {
   static contextType = ThemeContext;
   render() {
+    // const { supNum,oppNum } = this.props;
     const { test } = this.context;
     console.log(test.getState());
     return (
@@ -20,3 +22,4 @@ class Main extends React.Component {
   }
 }
 export default Main;
+// export default (state=>state.vote(组件名));
