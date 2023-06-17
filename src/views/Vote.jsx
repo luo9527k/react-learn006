@@ -40,8 +40,10 @@ class Vote extends React.Component {
   }
 }
 export default Vote;
+// 3.export default connect(null,action.vote)(Vote);
+
 /*
-3.
+原理：
 export default connect(null,dispatch=>{
       null,
       dispatch=>{

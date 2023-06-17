@@ -7,6 +7,7 @@ import ThemeContext from './ThemeContext';
 import Index from './views/Index';
 import Main from './views/Main';
 import Vote from './views/Vote';
+//1. import {Provider} from 'react-redux'
 
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,5 +20,8 @@ root.render(
       <Main />
       <Vote />
     </ThemeContext.Provider>
+    {/* 2.<Provider>
+      ...组件
+    </Provider> */}
   </ConfigProvider>
 );
