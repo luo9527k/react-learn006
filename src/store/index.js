@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-
+import * as Types from '../js/action-type';
 
 // 管理员：修改STORE容器中的公共状态
 const initial = {
@@ -16,10 +16,10 @@ const reducer = (state = initial, action) => {
   state = { ...state };
   switch (action.type) {
     //第二次，基于业务逻辑，实现手动派发
-    case 'vote_sup':
+    case Types.vote_sup:
       state.supNum++;
       break;
-    case 'vote_opp':
+    case Types.vote_opp:
       state.oppNum++;
       break;
     default:
