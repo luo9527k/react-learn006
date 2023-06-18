@@ -8,7 +8,7 @@ import Index from './views/Index';
 import Main from './views/Main';
 import Vote from './views/Vote';
 //1. import {Provider} from 'react-redux'
-
+// import { Provider } from './core/ReactRedux';
 //获取id为root的容器，作为我们的根容器
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
