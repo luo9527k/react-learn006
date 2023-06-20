@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
+import { legacy_createStore as createStore, applyMiddleware } from 'redux';
 import * as Types from '../js/action-type';
+import reduxLogger from 'redux-logger';
 
 // 管理员：修改STORE容器中的公共状态
 const initial = {
@@ -29,5 +30,5 @@ const reducer = (state = initial, action) => {
 };
 
 //创建store公共容器
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(reduxLogger));
 export default store;

@@ -6,7 +6,6 @@ class Main extends React.Component {
   static contextType = ThemeContext;
   render() {
     // const { supNum,oppNum } = this.props;
-    console.log(connect);
     const { test } = this.context;
     console.log(test.getState());
     return (
@@ -22,5 +21,5 @@ class Main extends React.Component {
     };
   }
 }
-// export default Main;
-export default connect((state) => state.vote(Main));
+export default Main;
+// export default connect((state) => state.vote(Main));

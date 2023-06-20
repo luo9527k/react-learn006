@@ -8,7 +8,7 @@ class Vote extends React.Component {
   static contextType = ThemeContext;
   render() {
     //2. const {supNum,oppNum}=this.props
-    console.log(connect);
+    // console.log(connect);
     const { index } = this.context;
     console.log(index.getState());
     return (
