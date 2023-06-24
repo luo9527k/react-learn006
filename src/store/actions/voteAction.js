@@ -11,6 +11,7 @@ const delay = (internal = 1000) => {
 
 const voteAction = {
   support() {
+    //dispatch 进行重写，传递给dispath的一个函数，不会通知reducer执行，仅仅是返回的这个函数
     return async (dispatch) => {
       await delay();
       dispatch({
