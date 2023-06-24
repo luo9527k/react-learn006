@@ -1,5 +1,4 @@
 //把各个板块的action合并为一个action
-
 import voteAction from './voteAction';
 import personalAction from './personalAction';
 
