@@ -6,7 +6,6 @@ const Index = (props) => {
   const { title, handle, top } = props;
   // const { supNum,oppNum} = props;
   const { index } = useContext(ThemeContext);
-  console.log(index.getState());
   //获取容器中的公共组件
   const { supNum, oppNum } = index.getState();
 

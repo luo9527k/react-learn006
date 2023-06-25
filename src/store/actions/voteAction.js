@@ -10,6 +10,7 @@ const delay = (internal = 1000) => {
 };
 
 const voteAction = {
+  //redux-thunk中间件的语法
   support() {
     //dispatch 进行重写，传递给dispath的一个函数，不会通知reducer执行，仅仅是返回的这个函数
     return async (dispatch) => {
@@ -19,7 +20,9 @@ const voteAction = {
       });
     };
   },
-  oppose() {
+  //redux-promise中间件
+  async oppose() {
+    await delay(2000);
     return {
       type: Types.vote_opp,
     };
